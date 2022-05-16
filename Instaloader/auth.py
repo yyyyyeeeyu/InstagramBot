@@ -7,9 +7,9 @@ from .database.users_sql import set_info, delete_info
 async def _auth(bot, msg):
     await msg.reply("**Yalnızca bize güveniyorsanız yetkilendirin** \n\n"
                     "1) Yetki vermek için hesabınız için instagram kullanıcı adı ve şifre sağlamanız gerekir. "
-                    ".\n"
+                    " size soruldugunda.\n"
                     "2) Bu amaçla yeni bir hesap açmanızı öneririz çünkü instagram hesabınızı yasaklayabilir. "
-                    ". \n\n"
+                    "Size Sorulduğunda. \n\n"
                     "**Not** : Hesap yasaklarından sorumlu değiliz")
     confirmation = await bot.ask(msg.from_user.id,
                                  "**Devam etmek istiyor musunuz?** \n\n '`yes`' veya '`y`' yazın "
