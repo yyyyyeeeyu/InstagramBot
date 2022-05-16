@@ -4,61 +4,59 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     # Start Message
     START = """
-Hey {}
+Selam {}
 
-Welcome to {}
+Hoşgeldiniz {}
 
-I can download profile pictures, videos, images and reels from instagram along with post caption.
-You can also authorize me to download private posts.
+Instagram'dan profil resimleri, videolar, resimler ve makaraları yazı başlığıyla birlikte indirebilirim.
+Ayrıca özel gönderileri indirmem için bana yetki verebilirsiniz..
 
-Use below buttons to learn more.
+Daha fazla bilgi edinmek için aşağıdaki düğmeleri kullanın.
 
-By @StarkBots
+Tarafından: @EpicEye @EpicEyeBots
     """
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="🏠 Eve dön 🏠", callback_data="home")]
     ]
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
+        [InlineKeyboardButton("✨ Bot Durumu ve Daha Fazla Bot ✨", url="https://t.me/EpicEyeBots")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("Nasıl kullanılır ❔", callback_data="help"),
+            InlineKeyboardButton(" Hakkında ", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
+        [InlineKeyboardButton(" Daha Şaşırtıcı botlar ", url="https://t.me/EpicEyeBots")],
     ]
 
     # Help Message
     HELP = """
-1) **Images, Videos and Reels**
-Send the link here to get the post contents including caption.
+1) **Resimler, Videolar ve Makaralar**
+Altyazı dahil gönderi içeriğini almak için bağlantıyı buraya gönderin.
 
-2) **Profile Pictures**
-Use the command `/profile_pic` or `/dp` along with instagram username to get its profile picture.
+2) **Profil fotoğrafları**
+komutu kullanın `/profile_pic` veya `/dp` profil resmini almak için instagram kullanıcı adı ile birlikte.
 Example : `/dp StarkProgrammer`
 
-3) **Private Posts**
-Authorize the bot to download private posts. Use /auth
+3) **Özel Gönderiler**
+Botu özel gönderileri indirmesi için yetkilendirin. Kullanmak /auth
 
-**Note** : Stories and IGTV are not supported.
+**Not** : Hikayeler ve IGTV desteklenmez.
 
-Use /auth to authorize and /unauth to unauthorize.
+Yetkilendirmek için /auth - Yetkisini kaldırmak için /unauth 
 """
 
     # About Message
     ABOUT = """
-**About This Bot** 
+**Bu Bot Hakkında** 
 
-A telegram bot to download instagram content by @StarkBots
+Instagram içeriğini indirmek için bir telegram botu: @EpicEyeBots
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/InstagramBot)
+Kanal: @EpicEyeBots
 
-Framework : [Pyrogram](docs.pyrogram.org)
+Grubumuz : @SohbetAlley
 
-Language : [Python](www.python.org)
-
-Developer : @StarkProgrammer
+Developer : @Bloodpers
     """
