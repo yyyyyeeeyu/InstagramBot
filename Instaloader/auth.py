@@ -6,7 +6,8 @@ from .database.users_sql import set_info, delete_info
 @Client.on_message(filters.private & filters.incoming & filters.command("auth"))
 async def _auth(bot, msg):
     await msg.reply("**Yalnızca bize güveniyorsanız yetkilendirin** \n\n"
-                    "1) Yetki vermek için istendiğinde hesabınız için instagram kullanıcı adı ve şifre sağlamanız gerekir."\n\n"
+                    "1) Yetki vermek için hesabınız için instagram kullanıcı adı ve şifre sağlamanız gerekir. "
+                    ".\n"
                     "2) Bu amaçla yeni bir hesap açmanızı öneririz çünkü instagram hesabınızı yasaklayabilir. "
                     ". \n\n"
                     "**Not** : Hesap yasaklarından sorumlu değiliz")
