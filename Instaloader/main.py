@@ -11,7 +11,7 @@ from .database.users_sql import get_info
 async def main(_, msg):
     if 'instagram.com' not in msg.text:
         return
-    status = await msg.reply('Please Wait...', quote=True)
+    status = await msg.reply('Lütfen Bekleyin...', quote=True)
     pattern = re.compile(r'^(https?:[/][/])?(www\.)?instagram.com[/](p|reel)[/]([A-Za-z0-9-_]+)')
     try:
         matches = pattern.search(msg.text)
@@ -30,19 +30,19 @@ async def main(_, msg):
             stderr=asyncio.subprocess.PIPE
         )
         stdout, stderr = await proc.communicate()
-        if "wrong password" in str(stderr).lower():
-            raise Exception('Wrong Instagram Password.')
+        if "Yanlış Şifre" in str(stderr).lower():
+            raise Exception(' Yalnış Instagram Şifresi.')
         path = f"-{post_id}"
         photos, videos, caption = post_prep(path)
         if not photos and not videos:
             await status.delete()
-            await msg.reply("No Such Instagram Post Exists.")
+            await msg.reply("Böyle Bir Instagram Gönderisi Yok E.")
             return
         if len(photos+videos) == 1:
             if caption:
-                caption += "\n\nBy @StarkBots"
+                caption += "\n\n @EpicEyeBots"
             else:
-                caption = "By @StarkBots"
+                caption = "@EpicEyeBots"
             if photos:
                 for photo in photos:
                     await msg.reply_photo(photo, caption)
@@ -57,7 +57,7 @@ async def main(_, msg):
                 for video in videos:
                     await msg.reply_video(video)
             if caption:
-                await msg.reply(f"**POST CAPTION : **\n\n{caption} \n\nBy @StarkBots")
+                await msg.reply(f"**Altyazı Gönder : **\n\n{caption} \n\n@EpicEyeBots")
         await status.delete()
         shutil.rmtree(path)
     except AttributeError:
@@ -66,10 +66,10 @@ async def main(_, msg):
 
 
 error = """
-Please send me a valid instagram post link.
-It must be like one of the given below
+Lütfen bana geçerli bir instagram gönderi bağlantısı gönderin .
+Aşağıda verilenlerden biri gibi olmalı
 
-**Note** : To get profile picture of a account use "`/profile_pic instagram-username`". Link won't work.
+**Not** : Bir hesabın profil resmini almak için kullanın "`/profile_pic instagram-username`". Bağlantı çalışmayacak
 """
 
 
